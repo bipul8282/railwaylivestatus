@@ -1,0 +1,49 @@
+.main{
+    display: flex;
+    /* border: 1px solid red; */
+justify-content: space-around;
+height: 8vh;
+align-items: center;
+background: rgb(255, 251, 137);
+background: linear-gradient(135deg, rgb(199, 186, 175) 31%, rgb(187, 237, 234) 61%);
+}
+.logo{
+    display: flex;
+    gap: 1rem;
+    /* border: 1px solid blue; */
+}
+.option{
+    display: flex;
+    width: 50%;
+    justify-content:space-around ;
+}
+.logo h3{
+    font-size: 1.5rem;
+    text-shadow: 2px 2px rgb(255, 255, 255);
+   
+}
+.option h3{
+    font-size: 1.5rem;
+    text-shadow: 2px 2px rgb(255, 255, 255);
+}
+
+.navLinnk{
+    text-decoration: none;
+}
+
+@media only screen and (max-width:700px){
+    .logo h3{
+    display: none;
+       
+    }
+    .option h3{
+        font-size: 1rem;
+        text-shadow: 2px 2px rgb(255, 255, 255)
+    }
+    .option{
+        display: flex;
+        width: 50%;
+        gap: 0.2rem;
+        justify-content: flex-start ;
+    }
+}

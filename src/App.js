@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import { BrowserRouter,Routes,Route } from 'react-router-dom'
+import Home from './Pages/Home/Home'
+import AboutUs from "./Pages/AboutUs/AboutUs"
+import ContactUs from "./Pages/ContactUs/ContactUs"
+import Card from './Component/Card/Card'
+import TrainLivePage from './Pages/TrainLivePage/TrainLivePage'
 
-function App() {
+
+export default function App() {
+  const [fetchData , setFetchData] = useState([])
+  console.log('update')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+     <BrowserRouter>
+     <Routes>
+      <Route path='/' element={<Home setFetchData={setFetchData} />}></Route>
+      <Route path='/AboutUs'element={<AboutUs />}></Route>
+      <Route path='/ContactUs'element={<ContactUs  />}></Route>   
+      <Route path='/Card'element={<Card fetchData={fetchData}/>}></Route>
+      <Route path='/TrainLivePage' element={<TrainLivePage/>}></Route>
+     </Routes>
+     </BrowserRouter> 
     </div>
-  );
+  )
 }
-
-export default App;
