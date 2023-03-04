@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { nanoid } from 'nanoid';
 import style from "./SignUp.module.css"
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default  function SignUp() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate()
 
   const [error, setError] = useState('');
@@ -39,6 +40,7 @@ export default  function SignUp() {
       name: name,
       email: email,
       phone: phone,
+      password,
     };
 
     const previousContacts = JSON.parse(localStorage.getItem('contacts')) || [];
@@ -48,8 +50,9 @@ export default  function SignUp() {
     setName('');
     setEmail('');
     setPhone('');
+    setPassword("");
     alert('Contact added successfully.');
-    navigate("/Home")
+    navigate("/login")
   };
 
   return (
@@ -90,10 +93,22 @@ export default  function SignUp() {
             }}
           />
         </section>
+        <section >
+          <label htmlFor="password">Password</label>
+          <input
+            id="password"
+            type="text"
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+        </section>
         <section>
           {error && <p style={{ fontSize: '12px', color: 'White' }}>{error}</p>}
         </section>
         <button  type="submit">Submit</button>
+        <Link style={{ fontSize: '12px', color: 'White' }} to='/login'>Already register</Link>
       </form>
     </div>
   );

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import style from "./Card.module.css";
 import { useRecoilState } from "recoil";
-
+import { isLogin } from "../../Atom/Atom";
+import { useRecoilValue } from "recoil";
 import Navbar from "../Navbar/Navbar";
 import { traindata } from "../../Atom/Atom";
 import { useNavigate } from "react-router-dom";
@@ -9,10 +10,14 @@ import { useNavigate } from "react-router-dom";
 
 function Card({ fetchData}) {
 const navigate=useNavigate()
-
+const loginStatus = useRecoilValue(isLogin)
 const [data,setData] = useRecoilState(traindata)
 console.log(data,"...🤣🤣🤣🤣🤣")
-
+useEffect(()=>{
+  if(!loginStatus){
+    navigate('/login')
+  }
+},[])
 
 
 function handleLiveStatus(item){
@@ -35,8 +40,14 @@ navigate("/TrainLivePage")
 }
 
   return (
+    <>
+    {loginStatus &&
     <div className={style.main}>
       <Navbar />
+      {
+        // !data.length > 0 ? <h4>Loding....</h4>:
+      
+      <>
       <h2 className={style.head}>List of trains search by train number... </h2>
       <div className={style.allCard}>
         {fetchData.map((item) => (
@@ -60,7 +71,11 @@ navigate("/TrainLivePage")
           
         ))}
       </div>
+      </>
+        }
     </div>
+        }
+        </>
   );
 }
 

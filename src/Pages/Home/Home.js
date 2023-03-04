@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./Home.module.css";
 import { useNavigate } from "react-router-dom";
+import { isLogin } from "../../Atom/Atom";
+import { useRecoilValue } from "recoil";
 
 
 import Navbar from "../../Component/Navbar/Navbar";
@@ -9,7 +11,12 @@ import Footer from "../../Atom/Footer/Footer";
 function Home({setFetchData}) {
   const navigate = useNavigate();
   const [number, setNumber] = useState("");
- 
+  const loginStatus = useRecoilValue(isLogin)
+  useEffect(()=>{
+    if(!loginStatus){
+      navigate('/login')
+    }
+  },[])
   function handleClick(number) {
     if(!number){
       alert("Please search by number")
@@ -37,7 +44,7 @@ function Home({setFetchData}) {
     // console.log(trainList, "predicted train by number");
 
   return (
-    <>
+    <>{loginStatus && 
       <div className={style.homeMain}>
         <Navbar />
        
@@ -62,6 +69,7 @@ function Home({setFetchData}) {
         </div>
         <Footer  className={style.footer}/>
       </div>
+    }
     </>
   );
 }
