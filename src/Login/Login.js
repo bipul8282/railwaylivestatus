@@ -63,6 +63,7 @@ export default  function Login() {
         <section >
           <label htmlFor="password">Password</label>
           <input
+          className={style.passwordinput}
             id="password"
             type="text"
             value={password}

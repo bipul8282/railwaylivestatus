@@ -96,6 +96,7 @@ export default  function SignUp() {
         <section >
           <label htmlFor="password">Password</label>
           <input
+          className={style.passwordInput}
             id="password"
             type="text"
             value={password}
@@ -108,7 +109,8 @@ export default  function SignUp() {
           {error && <p style={{ fontSize: '12px', color: 'White' }}>{error}</p>}
         </section>
         <button  type="submit">Submit</button>
-        <Link style={{ fontSize: '12px', color: 'White' }} to='/login'>Already register</Link>
+        <br/>
+        <Link style={{ fontSize: '14px', color: 'White'} } to='/login'>Already register</Link>
       </form>
     </div>
   );

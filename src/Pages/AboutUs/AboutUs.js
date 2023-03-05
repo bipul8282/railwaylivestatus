@@ -6,11 +6,20 @@ export default function AboutUs() {
   return (
     <div className={style.main}>
     <Navbar />
-      <h1>AboutUs</h1>
-      <p style={{fontSize:'10px',backgroundColor:"#ab75a5c9"}}>RussianRailway.com is a part of Anyday travel Ltd. Anyday travel is a full service company with its local 
-        offices in Moscow and St.Petersburg. Formed in 2000, our company was one of just a few travel agencies in Russia 
-        to start providing local travel services via the internet. We continue to support many Russia-related websites 
-        making them as convenient to our customers as possible.  </p>
+     <div className={style.container}>
+     <h1>AboutUs</h1>
+     <p>Welcome to the about us page of our railway website!</p>
+   
+<p>We are a team of dedicated professionals who are passionate about providing high-quality railway services to our customers. Our website serves as a one-stop-shop for all your railway needs, from booking tickets to checking train schedules and everything in between.</p>
+
+<p>Our goal is to make your railway experience as smooth and convenient as possible. We understand that travelling by train can be stressful at times, and we want to do everything in our power to alleviate that stress.</p>
+
+<p>We pride ourselves on providing excellent customer service. If you have any questions or concerns, our customer support team is available 24/7 to assist you. You can contact us by phone, email, or through our website's live chat feature.</p>
+
+<p>Thank you for choosing our railway website for your travel needs. We look forward to serving you and providing you with the best possible railway experience.</p>
+     </div>
+    
+      <img className={style.img} src="https://giffiles.alphacoders.com/213/21349.gif" alt="train" />
     </div>
   )
 }
