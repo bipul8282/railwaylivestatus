@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import style from "./Login.module.css"
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { isLogin ,loginUser} from '../Atom/Atom';
 import { useSetRecoilState } from 'recoil';
 export default  function Login() {
@@ -73,8 +73,10 @@ export default  function Login() {
           />
         </section>
         
-        <button  type="submit">Submit</button>
+        <button  type="submit">Submit</button><br/>
+        <Link style={{ fontSize: '14px', color: 'White'} } to="/">New User SignUp</Link>
       </form>
+      
     </div>
   );
 }

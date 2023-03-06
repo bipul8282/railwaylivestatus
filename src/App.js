@@ -5,11 +5,10 @@ import AboutUs from "./Pages/AboutUs/AboutUs"
 import ContactUs from "./Pages/ContactUs/ContactUs"
 import Card from './Component/Card/Card'
 import TrainLivePage from './Pages/TrainLivePage/TrainLivePage'
-// import SignUp from './SignUp/SignUp'
 import Login from './Login/Login'
 import SignUp from './SignUp/SignUp'
 import Loader from './Component/Loader/Loader'
-// import Login from './Login/Login'
+
 
 
 export default function App() {

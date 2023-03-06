@@ -4,8 +4,10 @@ import style from "./AboutUs.module.css"
 
 export default function AboutUs() {
   return (
-    <div className={style.main}>
+    <>
     <Navbar />
+    <div className={style.main}>
+    
      <div className={style.container}>
      <h1>AboutUs</h1>
      <p>Welcome to the about us page of our railway website!</p>
@@ -21,5 +23,6 @@ export default function AboutUs() {
     
       <img className={style.img} src="https://giffiles.alphacoders.com/213/21349.gif" alt="train" />
     </div>
+    </>
   )
 }
