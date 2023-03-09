@@ -3,10 +3,9 @@ import style from "./Home.module.css";
 import { useNavigate } from "react-router-dom";
 import { isLogin } from "../../Atom/Atom";
 import { useRecoilValue } from "recoil";
-
-
 import Navbar from "../../Component/Navbar/Navbar";
 import Footer from "../../Atom/Footer/Footer";
+
 
 function Home({setFetchData}) {
   const navigate = useNavigate();
