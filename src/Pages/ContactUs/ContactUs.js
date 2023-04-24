@@ -25,19 +25,19 @@ export default function ContactUs() {
           <div>
             <FiPhoneCall />
             <h4>For Calls</h4>
-            <h2>+7 9213273040</h2>
+            <h2>91 9213273040</h2>
           </div>
 
           <div>
             <BsWhatsapp />
             <h4>FOR SMS AND WHATSAPP </h4>
-            <h2>+7 9213273040</h2>
+            <h2>91 9213273040</h2>
           </div>
 
           <div>
             <AiOutlineMail />
             <h4>EMAIL</h4>
-            <h2>info@russianrailways.com</h2>
+            <h2>info@indianrailway.com</h2>
           </div>
         </div>
 
